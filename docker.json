@@ -1,0 +1,14 @@
+{
+	"Mount": [
+		[ "/pd/app",  "/pd/app",  "ro"],
+		[ "/pd/omen", "/pd/omen", "ro"]
+	],
+	"Command": [
+		"/bin/echo",
+		"Testing default docker options"
+	],
+	"DNS": [
+		"8.8.8.8",
+		"8.8.4.4"
+	]
+}
