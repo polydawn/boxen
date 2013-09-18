@@ -8,6 +8,13 @@ import (
 )
 
 func main() {
+	errs := make([]error, 3) // Handle write errors once
+
+	//Speed up installs and don't create cache files
+	//	See: https://github.com/dotcloud/docker/pull/1883#issuecomment-24434115
+	errs[0] = WriteFile("/etc/dpkg/dpkg.cfg.d/02apt-speedup", []byte("force-unsafe-io"), 0644)
+	errs[1] = WriteFile("/etc/apt/apt.conf.d/no-cache",       []byte("Acquire::http {No-Cache=True;};"), 0644)
+
 	//Default Ubuntu sources via http://repogen.simplylinux.ch
 	var sources =
 		"###### Ubuntu Main Repos \n" +
@@ -18,10 +25,14 @@ func main() {
 		//TODO add universe
 
 	//Update the apt-get sources
-	err := WriteFile("/etc/apt/sources.list", []byte(sources), 0644)
-	if err != nil {
-		Println("Could not write sources file:", err)
-		os.Exit(1)
+	errs[2] = WriteFile("/etc/apt/sources.list", []byte(sources), 0644)
+
+	//Just wrote a bunch of files, check for errors
+	for i := range errs {
+		if errs[i] != nil {
+			Println("Error: Could not write file", i, ":", errs[i])
+			os.Exit(1)
+		}
 	}
 
 	// Pin initscripts, because docker is messing with files that package thinks it owns.
