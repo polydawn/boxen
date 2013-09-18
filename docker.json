@@ -1,14 +1,21 @@
 {
 	"Mount": [
 		[ "/pd/app",  "/pd/app",  "ro"],
-		[ "/pd/omen", "/pd/omen", "ro"]
+		[ "/pd/omen", "/pd/omen", "ro"],
+		[ "/pd/dock", "/pd/dock", "ro"],
+		[ "./",       "/cwd",     "ro"]
 	],
 	"Command": [
 		"/bin/echo",
 		"Testing default docker options"
 	],
+	"Environment": [
+		[ "GOROOT", "/pd/app/go/go/" ],
+		[ "GOPATH", "/pd/dock/.gopath/" ]
+	],
 	"DNS": [
 		"8.8.8.8",
 		"8.8.4.4"
-	]
+	],
+	"Purge": true
 }

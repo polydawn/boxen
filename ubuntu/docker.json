@@ -1,6 +1,10 @@
 {
 	"Command": [
-		"/bin/echo",
-		"Ubuntu"
-	]
+		"bash"
+	],
+	"BuildCommand": [
+		"/pd/app/go/go/bin/go", "run", "/cwd/build.go"
+	],
+	"Attach": true,
+	"Purge": true
 }
