@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	errs := make([]error, 3) // Handle write errors once
+	errs := make([]error, 4) // Handle write errors once
 
 	//Speed up installs and don't create cache files
 	//	See: https://github.com/dotcloud/docker/pull/1883#issuecomment-24434115
@@ -26,6 +26,10 @@ func main() {
 
 	//Update the apt-get sources
 	errs[2] = WriteFile("/etc/apt/sources.list", []byte(sources), 0644)
+
+	//Prevent daemons from auto-starting on install or upgrade
+	//	See: https://github.com/dotcloud/docker/issues/446#issuecomment-16953173
+	errs[3] = WriteFile("/usr/sbin/policy-rc.d", []byte("#!/bin/sh \n" + "exit 101 \n\n"), 0644)
 
 	//Just wrote a bunch of files, check for errors
 	for i := range errs {
