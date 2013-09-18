@@ -15,6 +15,13 @@ func main() {
 	errs[0] = WriteFile("/etc/dpkg/dpkg.cfg.d/02apt-speedup", []byte("force-unsafe-io"), 0644)
 	errs[1] = WriteFile("/etc/apt/apt.conf.d/no-cache",       []byte("Acquire::http {No-Cache=True;};"), 0644)
 
+	//Tell apt to use a nearby mirror. Can *dramatically* increase update speed.
+	var mirrors =
+		"###### Mirrors for apt-get" +
+		"deb mirror://mirrors.ubuntu.com/mirrors.txt quantal main restricted universe multiverse \n" +
+		"deb mirror://mirrors.ubuntu.com/mirrors.txt quantal-updates main restricted universe multiverse \n" +
+		"deb mirror://mirrors.ubuntu.com/mirrors.txt quantal-security main restricted universe multiverse \n\n"
+
 	//Default Ubuntu sources via http://repogen.simplylinux.ch
 	var sources =
 		"###### Ubuntu Main Repos \n" +
@@ -25,7 +32,7 @@ func main() {
 		//TODO add universe
 
 	//Update the apt-get sources
-	errs[2] = WriteFile("/etc/apt/sources.list", []byte(sources), 0644)
+	errs[2] = WriteFile("/etc/apt/sources.list", []byte(mirrors + sources), 0644)
 
 	//Prevent daemons from auto-starting on install or upgrade
 	//	See: https://github.com/dotcloud/docker/issues/446#issuecomment-16953173
