@@ -11,7 +11,8 @@
 	],
 	"Environment": [
 		[ "GOROOT", "/pd/app/go/go/" ],
-		[ "GOPATH", "/pd/dock/.gopath/" ]
+		[ "GOPATH", "/pd/dock/.gopath/" ],
+		[ "PATH",   "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/pd/app/bin" ]
 	],
 	"DNS": [
 		"8.8.8.8",
