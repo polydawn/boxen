@@ -56,10 +56,10 @@ func main() {
 		BakeOpts(DefaultIO).
 		BakeEnv(Env{"DEBIAN_FRONTEND": "noninteractive"})
 	apt("update",       "-y")()
-	apt("dist-upgrade", "-y")()
+	apt("dist-upgrade", "-y")(Opts{OkExit: []int{0, 100}})()
 
 	// Ask apt to clean up after itself (we don't want to waste disk committing a bunch of caches).
-	apt("autoremove",   "-y")()
+	apt("autoremove",   "-y")(Opts{OkExit: []int{0, 100}})()
 	apt("clean",        "-y")()
 	// Forcibly remove more apt state that is evidentally not actually required.
 	Sh("rm")("-rf", "/var/lib/apt/lists")()
