@@ -2,9 +2,11 @@
 	"Command": [
 		"bash"
 	],
-	"BuildCommand": [
+	"Build": [
 		"/pd/app/go/go/bin/go", "run", "/cwd/build.go"
 	],
-	"Attach": true,
-	"Purge": true
+	"Image":    "pd-ubuntu:12.10",
+	"Upstream": "ubuntu:12.10",
+	"Attach":   true,
+	"Purge":    true
 }
