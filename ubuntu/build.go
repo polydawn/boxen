@@ -36,7 +36,7 @@ func main() {
 
 	//Prevent daemons from auto-starting on install or upgrade
 	//	See: https://github.com/dotcloud/docker/issues/446#issuecomment-16953173
-	errs[3] = WriteFile("/usr/sbin/policy-rc.d", []byte("#!/bin/sh \n" + "exit 101 \n\n"), 0644)
+	errs[3] = WriteFile("/usr/sbin/policy-rc.d", []byte("#!/bin/sh\n" + "exit 101\n\n"), 0755)
 
 	//Just wrote a bunch of files, check for errors
 	for i := range errs {
@@ -49,17 +49,17 @@ func main() {
 	// Pin initscripts, because docker is messing with files that package thinks it owns.
 	// Also procps, because it's trying to dial socket /com/ubuntu/upstart and um no.
 	// Also udev, because what i don't even
-	Sh("apt-mark")("hold", "initscripts", "procps", "udev", "makedev")(DefaultIO)()
+	Sh("apt-mark")("hold", "initscripts")(DefaultIO)()
 
 	//Update to latest Ubuntu packages!
 	apt := Sh("apt-get").
 		BakeOpts(DefaultIO).
 		BakeEnv(Env{"DEBIAN_FRONTEND": "noninteractive"})
 	apt("update",       "-y")()
-	apt("dist-upgrade", "-y")(Opts{OkExit: []int{0, 100}})()
+	apt("dist-upgrade", "-y")()
 
 	// Ask apt to clean up after itself (we don't want to waste disk committing a bunch of caches).
-	apt("autoremove",   "-y")(Opts{OkExit: []int{0, 100}})()
+	apt("autoremove",   "-y")()
 	apt("clean",        "-y")()
 	// Forcibly remove more apt state that is evidentally not actually required.
 	Sh("rm")("-rf", "/var/lib/apt/lists")()
