@@ -1,0 +1,3 @@
+[submodule ".gopath/src/polydawn.net/pogo"]
+	path = .gopath/src/polydawn.net/pogo
+	url = https://github.com/polydawn/pogo.git
