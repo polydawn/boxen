@@ -1,7 +1,7 @@
 package main
 
 import (
-	. "polydawn.net/gosh/psh"
+	. "polydawn.net/pogo/gosh"
 	. "io/ioutil"
 	. "fmt"
 	"os"

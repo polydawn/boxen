@@ -2,7 +2,7 @@
 	"Mount": [
 		[ "/pd/app",  "/pd/app",  "ro"],
 		[ "/pd/omen", "/pd/omen", "ro"],
-		[ "/pd/dock", "/pd/dock", "ro"],
+		[ ".../",     "/boxen",   "ro"],
 		[ "./",       "/cwd",     "ro"]
 	],
 	"Command": [
@@ -11,7 +11,7 @@
 	],
 	"Environment": [
 		[ "GOROOT", "/pd/app/go/go/" ],
-		[ "GOPATH", "/pd/dock/.gopath/" ],
+		[ "GOPATH", "/boxen/.gopath/" ],
 		[ "PATH",   "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/pd/app/bin" ]
 	],
 	"DNS": [
