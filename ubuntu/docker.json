@@ -3,7 +3,7 @@
 		"bash"
 	],
 	"Build": [
-		"/pd/app/go/go/bin/go", "run", "/cwd/build.go"
+		"/go/bin/go", "run", "/cwd/build.go"
 	],
 	"Image":    "pd-ubuntu:12.10",
 	"Upstream": "ubuntu:12.10",
