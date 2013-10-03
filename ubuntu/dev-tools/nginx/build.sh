@@ -22,6 +22,6 @@ git checkout --quiet release-1.5.4
 	--with-pcre-jit \
 	--with-http_ssl_module
 
-
+# Compile and install
 make
 make install
