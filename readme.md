@@ -10,11 +10,20 @@ Combined with
 
 ## Quickstart
 
+Coming soon!
+
+## Install
+
 Boxen uses [Docker](http://www.docker.io/), an excellent container helper based on LXC.
 
-On ubuntu, using the latest packaged installation (0.6.x) works fine:
+On ubuntu 13.04, using the latest packaged installation (0.6.x) works fine. From their [instructions](http://docs.docker.io/en/latest/installation/ubuntulinux/):
 ```bash
-sudo apt-get install docker
+sudo apt-get update
+sudo apt-get install linux-image-extra-`uname -r`
+sudo sh -c "wget -qO- https://get.docker.io/gpg | apt-key add -"
+sudo sh -c "echo deb http://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
+sudo apt-get update
+sudo apt-get install lxc-docker
 ```
 
 You will need Go 1.1 or newer. Boxen assumed it's located in /usr/local/go, but this is easy to [./docker.json](configure).
