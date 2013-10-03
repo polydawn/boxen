@@ -1,10 +1,7 @@
 #!/bin/bash -e
 
-#Folder layout
-mkdir /service && cd /service
-
 # Get the source, checkout tagged release
-git clone https://git.kofalt.com/git/public/nginx.git src && cd src
+git clone https://git.kofalt.com/git/public/nginx.git /service/src && cd /service/src
 git checkout --quiet release-1.5.4
 
 # Configure

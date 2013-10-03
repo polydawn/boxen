@@ -14,7 +14,7 @@
 		["80", "80"],
 		["443", "443"]
 	],
-	"Image":    "pd-nginx:1.2.6-dev",
+	"Image":    "pd-nginx:1.5.4",
 	"Upstream": "pd-tools:12.10",
 	"Attach":   true,
 	"Purge":    true
