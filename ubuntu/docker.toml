@@ -1,0 +1,12 @@
+# The default Ubuntu build.
+# Docker's Ubuntu image + updates & a few tweaks.
+
+# Run the build image.
+[default]
+	image = "pd-ubuntu:12.10"
+
+# Build target. Uses docker's Ubuntu image for upstream
+[build]
+	image = "ubuntu:12.10"
+
+	command = [ "/go/bin/go", "run", "/cwd/build.go" ]

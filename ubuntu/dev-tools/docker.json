@@ -1,6 +1,0 @@
-{
-	"Image":    "pd-tools:12.10",
-	"Upstream": "pd-ubuntu:12.10",
-	"Attach":   true,
-	"Purge":    true
-}

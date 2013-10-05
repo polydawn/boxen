@@ -1,0 +1,39 @@
+# Top-level sections are targets. Call them whatever you want!
+# If present, the 'default' section is always used.
+[default]
+	# What command to run when the docker launches
+	command = [ "/bin/echo", "Hello from boxen!" ]
+
+	# Custom DNS servers
+	dns = [ "8.8.8.8", "8.8.4.4" ]
+
+	# Environment variables
+	#	(name, value)
+	environment = [
+		[ "GOROOT", "/go/" ],
+		[ "GOPATH", "/boxen/.gopath/" ],
+		[ "PATH",   "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/go" ],
+	]
+
+	# Folder mounts
+	#	(host folder, container folder, 'ro' or 'rw' permissions)
+	#	The triple-dot ... notation is relative to the actual file, not the CWD
+	mounts = [
+		[ "/usr/local/go/", "/go",    "ro"],
+		[ ".../",           "/boxen", "ro"],
+		[ "./",             "/cwd",   "ro"],
+	]
+
+	# What container folder to start in
+	folder = "/"
+
+	# Interactive mode
+	attach = true
+
+	# Delete the container after running
+	purge = true
+
+# An example of a different build target
+[bash]
+	# You can add or override any properties in targets.
+	command = [ "/bin/bash" ]

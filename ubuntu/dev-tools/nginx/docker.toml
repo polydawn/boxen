@@ -1,0 +1,27 @@
+# Example nginx
+
+[default]
+	image = "pd-nginx:1.5.4"
+
+	# Run nginx in the foreground
+	command = [ "/service/bin/nginx",  "-g", "daemon off;", "-c", "/service/conf/nginx.conf" ]
+
+	# Port forwarding (host, guest)
+	ports = [
+		[  "80",  "80" ],
+		[ "443", "443" ],
+	]
+
+	# Additional folder mounts
+	mounts = [
+		[ "./conf", "/service/conf", "ro" ],
+		[ "./data", "/service/data", "ro" ],
+		[ "./log",  "/service/log",  "rw" ],
+	]
+
+[build]
+	# Use the pd-tools image to build nginx
+	image = "pd-tools:12.10"
+
+	# Build script
+	command = [ "/cwd/build.sh" ]
