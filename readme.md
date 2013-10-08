@@ -23,9 +23,7 @@ For example, assuming you have started docker elsewhere, run these commands from
 
 ```
 rm -rf dock
-ln -s /var/lib/docker/ && mv docker dock && cd dock
-ln -s /var/run/docker.pid && ln -s /var/run/docker.sock
-cd ..
+ln -s /var/run/ && mv run dock
 ```
 
 All boxen images will now connect to the system-default docker daemon.
