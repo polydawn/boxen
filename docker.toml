@@ -9,17 +9,17 @@
 
 	# Environment variables
 	#	(name, value)
-	environment = [
-		[ "GOROOT", "/go/" ],
-		[ "GOPATH", "/boxen/.gopath/" ],
-		[ "PATH",   "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/go" ],
-	]
+	# environment = [
+	# 	[ "GOROOT", "/go/" ],
+	# 	[ "GOPATH", "/boxen/.gopath/" ],
+	# 	[ "PATH",   "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/go" ],
+	# ]
 
 	# Folder mounts
 	#	(host folder, container folder, 'ro' or 'rw' permissions)
 	#	The triple-dot ... notation is relative to the actual file, not the CWD
 	mounts = [
-		[ "/usr/local/go/", "/go",    "ro"],
+	#	[ "/usr/local/go/", "/go",    "ro"],
 		[ ".../",           "/boxen", "ro"],
 		[ "./",             "/cwd",   "ro"],
 	]
