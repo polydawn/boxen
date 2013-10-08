@@ -19,7 +19,7 @@ func main() {
 	apt("install", "-y" , "build-essential", "libpcre3-dev", "zlib1g-dev", "libssl-dev")()
 
 	//Developer packages
-	apt("install", "-y" , "git")()
+	apt("install", "-y" , "git", "curl", "wget")()
 
 	//Ask apt to remove cache state that shouldn't be preserved in an image
 	apt("autoremove", "-y")()
