@@ -5,5 +5,3 @@
 
 [build]
 	image = "pd-ubuntu:12.10"
-
-	command = [ "/go/bin/go", "run", "/cwd/build.go" ]
