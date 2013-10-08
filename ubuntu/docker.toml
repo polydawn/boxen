@@ -9,4 +9,4 @@
 [build]
 	image = "ubuntu:12.10"
 
-	command = [ "/go/bin/go", "run", "/cwd/build.go" ]
+	command = [ "/cwd/build.sh" ]
