@@ -12,6 +12,24 @@ Combined with
 
 Coming soon!
 
+## Using with the Default Docker Daemon
+
+By default, dockctrl will use a `dock` folder it finds in the configuration directories.
+If that folder has `docker.pid` and `docker.sock` files, dockctrl connects to an existing daemon, otherwise it will start one for you.
+We have added an empty folder, so that running boxen images will be hosted in the same folder.
+
+If you want, you can opt to use your own docker daemon instead.
+For example, assuming you have started docker elsewhere, run these commands from the `boxen` folder:
+
+```
+rm -rf dock
+ln -s /var/lib/docker/ && mv docker dock && cd dock
+ln -s /var/run/docker.pid && ln -s /var/run/docker.sock
+cd ..
+```
+
+All boxen images will now connect to the system-default docker daemon.
+
 ## Install
 
 Boxen uses [Docker](http://www.docker.io/), an excellent container helper based on LXC.
