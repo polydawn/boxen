@@ -1,0 +1,18 @@
+[default]
+	image = "pd-openldap"
+
+	command = [ "/cwd/run.sh" ]
+
+	mounts = [
+		[ "./config/system", "/usr/share/slapd", "rw" ],
+		[ "./config/schema", "/etc/ldap/schema", "rw" ],
+		[ "./config/users",  "/service/conf",    "rw" ],
+	]
+
+[build]
+	image = "pd-ubuntu:12.10"
+
+	command = [ "/cwd/build.sh" ]
+
+[bash]
+	command = [ "/bin/bash" ]
