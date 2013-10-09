@@ -6,7 +6,7 @@
 	mounts = [
 		[ "./config/system", "/usr/share/slapd", "rw" ],
 		[ "./config/schema", "/etc/ldap/schema", "rw" ],
-		[ "./config/users",  "/service/conf",    "rw" ],
+		[ "./config/users",  "/service/users",   "rw" ],
 	]
 
 [build]
