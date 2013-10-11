@@ -9,6 +9,10 @@
 		[ "./config/users",  "/service/users",   "rw" ],
 	]
 
+	ports = [
+		[ "389", "389" ]
+	]
+
 [build]
 	image = "pd-ubuntu:12.10"
 
