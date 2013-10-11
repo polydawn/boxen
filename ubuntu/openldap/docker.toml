@@ -1,5 +1,5 @@
 [default]
-	image = "pd-openldap"
+	image = "docket.polydawn.net/public/openldap"
 
 	command = [ "/cwd/run.sh" ]
 
@@ -14,7 +14,7 @@
 	]
 
 [build]
-	image = "pd-ubuntu:12.10"
+	image = "docket.polydawn.net/public/ubuntu/12.04"
 
 	command = [ "/cwd/build.sh" ]
 

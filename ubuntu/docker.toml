@@ -3,10 +3,10 @@
 
 # Run the build image.
 [default]
-	image = "pd-ubuntu:12.10"
+	image = "docket.polydawn.net/public/ubuntu/12.04"
 
 # Build target. Uses docker's Ubuntu image for upstream
 [build]
-	image = "ubuntu:12.10"
+	image = "index.docker.io/ubuntu/12.04"
 
 	command = [ "/cwd/build.sh" ]

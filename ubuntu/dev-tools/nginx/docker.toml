@@ -1,7 +1,7 @@
 # Example nginx
 
 [default]
-	image = "pd-nginx:1.5.4"
+	image = "docket.polydawn.net/public/nginx"
 
 	# Run nginx in the foreground
 	command = [ "/service/bin/nginx",  "-g", "daemon off;", "-c", "/service/conf/nginx.conf" ]
@@ -21,7 +21,7 @@
 
 [build]
 	# Use the pd-tools image to build nginx
-	image = "pd-tools:12.10"
+	image = "docket.polydawn.net/public/dev-tools"
 
 	# Build script
 	command = [ "/cwd/build.sh" ]
