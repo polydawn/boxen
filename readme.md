@@ -1,6 +1,6 @@
 # Boxen
 
-Boxen is a set of easy-to-use configuration scripts for dockctrl.
+Boxen is a set of easy-to-use configuration scripts for docket.
 Build and run any service quickly & repeatably!
 
 Boxen configuration is recursive; each folder is a refinement of its parent.
@@ -14,8 +14,8 @@ Coming soon!
 
 ## Using with the Default Docker Daemon
 
-By default, dockctrl will use a `dock` folder it finds in the configuration directories.
-If that folder has `docker.pid` and `docker.sock` files, dockctrl connects to an existing daemon, otherwise it will start one for you.
+By default, docket will use a `dock` folder it finds in the configuration directories.
+If that folder has `docker.pid` and `docker.sock` files, docket connects to an existing daemon, otherwise it will start one for you.
 We have added an empty folder, so that running boxen images will be hosted in the same folder.
 
 If you want, you can opt to use your own docker daemon instead.
@@ -51,11 +51,11 @@ sudo tar -C /usr/local -xzf golang.tar.gz
 export PATH=$PATH:/usr/local/go/bin # Add this to /etc/profile or similar
 ```
 
-Grab dockctrl and place it on your path:
+Grab docket and place it on your path:
 ```bash
-git clone https://github.com/polydawn/dockctrl --recursive
-dockctrl/build.sh
-sudo cp dockctrl/dockctrl
+git clone https://github.com/polydawn/docket --recursive
+docket/build.sh
+sudo cp docket/docket
 ```
 
 Clone this repo and the libraries the boxen scripts will use:
@@ -65,20 +65,20 @@ git clone https://github.com/polydawn/boxen && cd boxen
 git submodule update --init .gopath/src/polydawn.net/pogo
 ```
 
-Now, you can run `dockctrl launch` or `dockctrl build` in any folder of boxen.
+Now, you can run `docket launch` or `docket build` in any folder of boxen.
 For example, to launch docker's default ubuntu shell:
 
 ```bash
 cd boxen/ubuntu
-dockctrl launch
+docket launch
 ```
 
-By default, dockctrl will clean up the docker for you ; no hanging leftovers.
+By default, docket will clean up the docker for you ; no hanging leftovers.
 Now let's build nginx:
 
 ```bash
-cd build-essential && dockctrl build && cd nginx && dockctrl build
-dockctrl launch
+cd build-essential && docket build && cd nginx && docket build
+docket launch
 ```
 
 You are now running a home-built nginx. Easy!
