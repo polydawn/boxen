@@ -1,0 +1,2 @@
+# Think carefully before adding your SSL certs to version control!
+/conf/certs/
