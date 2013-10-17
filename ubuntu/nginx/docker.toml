@@ -20,8 +20,4 @@
 	]
 
 [build]
-	# Use the pd-tools image to build nginx
-	image = "pd-tools:12.10"
-
-	# Build script
-	command = [ "/cwd/build.sh" ]
+	image = "pd-tools:12.10" # Upstream image

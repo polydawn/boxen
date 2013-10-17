@@ -1,12 +1,7 @@
-# The default Ubuntu build.
-# Docker's Ubuntu image + updates & a few tweaks.
+# Largely unmodified ubuntu box.
 
-# Run the build image.
 [default]
 	image = "pd-ubuntu:12.10"
 
-# Build target. Uses docker's Ubuntu image for upstream
 [build]
-	image = "ubuntu:12.10"
-
-	command = [ "/cwd/build.sh" ]
+	image = "ubuntu:12.10" # Upstream image

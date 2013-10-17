@@ -1,22 +1,22 @@
+# OpenLDAP directory server.
+
 [default]
 	image = "pd-openldap"
 
+	# Script to load
 	command = [ "/cwd/run.sh" ]
 
+	# Additional folder mounts
 	mounts = [
 		[ "./config/system", "/usr/share/slapd", "rw" ],
 		[ "./config/schema", "/etc/ldap/schema", "rw" ],
 		[ "./config/users",  "/service/users",   "rw" ],
 	]
 
+	# Port forwarding (host, guest)
 	ports = [
 		[ "389", "389" ]
 	]
 
 [build]
-	image = "pd-ubuntu:12.10"
-
-	command = [ "/cwd/build.sh" ]
-
-[bash]
-	command = [ "/bin/bash" ]
+	image = "pd-ubuntu:12.10" # Upstream image

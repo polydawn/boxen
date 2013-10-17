@@ -4,4 +4,4 @@
 	image = "pd-tools:12.10"
 
 [build]
-	image = "pd-ubuntu:12.10"
+	image = "pd-ubuntu:12.10" # Upstream image

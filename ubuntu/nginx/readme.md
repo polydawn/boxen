@@ -1,4 +1,4 @@
-# PD Nginx
+# Nginx
 
 A straightforward build of the nginx web server with SSL.
 
