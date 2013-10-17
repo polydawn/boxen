@@ -44,11 +44,10 @@ If that folder has `docker.pid` and `docker.sock` files, docket connects to an e
 We have added an empty folder, so all running boxen images will be hosted in the same folder.
 
 If you want, you can opt to use your own docker daemon instead.
-For example, assuming you have started docker elsewhere, run these commands from the `boxen` folder:
+To use the default daemon, run this from the `boxen` folder:
 
 ```
-rm -rf dock
-ln -s /var/run/ && mv run dock
+rm -rf dock && ln -s /var/run/ ./dock
 ```
 
 All boxen images will now connect to the system-default docker daemon.
