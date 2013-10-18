@@ -1,7 +1,9 @@
 # Largely unmodified ubuntu box.
 
 [default]
-	image = "pd-ubuntu:12.10"
+	# The image name
+	image = "docket.polydawn.net/ubuntu/12.10"
 
 [build]
-	image = "ubuntu:12.10" # Upstream image
+	# Upstream ubuntu image from graph
+	image = "index.docker.io/ubuntu/12.04"
