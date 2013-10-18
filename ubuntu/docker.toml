@@ -7,3 +7,18 @@
 [build]
 	# Upstream ubuntu image from graph
 	image = "index.docker.io/ubuntu/12.04"
+
+[index]
+	# Upstream ubuntu image pulled from public docker index.
+	#
+	# As of docker 0.6.3, the index pull behavior is absolutely insane.
+	# I'd love to specify where this image comes from, but I *can't*.
+	# Docker explicitly disallows specifying their own URL, see:
+	# https://github.com/dotcloud/docker/blob/d30806590c8436941e5c4f2349af61de0128c49e/registry/registry.go#L100
+	#
+	# Especially considering the above, I recommend you pull from the index exactly *once* and never again.
+	# A coming update to Docket will ensure that you don't accidentally pull unless you specify index as a source, eg:
+	# docket run -s index
+	#
+	# Until then... be careful!
+	image = "ubuntu:12.04"
