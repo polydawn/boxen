@@ -1,7 +1,7 @@
 # OpenLDAP directory server.
 
 [default]
-	image = "pd-openldap"
+	image = "docket.polydawn.net/openldap"
 
 	# Script to load
 	command = [ "/cwd/run.sh" ]
@@ -19,4 +19,4 @@
 	]
 
 [build]
-	image = "pd-ubuntu:12.10" # Upstream image
+	image = "docket.polydawn.net/ubuntu/12.04"

@@ -1,7 +1,7 @@
 # Common tools for developing web applications.
 
 [default]
-	image = "pd-webdev:0.10.20"
+	image = "docket.polydawn.net/web-dev"
 
 	# Let node where python is located
 	environment = [
@@ -9,4 +9,4 @@
 	]
 
 [build]
-	image = "ubuntu:12.10" # Upstream image
+	image = "docket.polydawn.net/ubuntu/12.04"

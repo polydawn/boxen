@@ -1,7 +1,7 @@
 # A few developer tools for building
 
 [default]
-	image = "pd-tools:12.10"
+	image = "docket.polydawn.net/dev-tools"
 
 [build]
-	image = "pd-ubuntu:12.10" # Upstream image
+	image = "docket.polydawn.net/ubuntu/12.04"
