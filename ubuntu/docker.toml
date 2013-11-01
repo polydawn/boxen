@@ -2,7 +2,7 @@
 
 [default]
 	# The image name
-	image = "docket.polydawn.net/ubuntu/12.10"
+	image = "docket.polydawn.net/ubuntu/12.04"
 
 [build]
 	# Upstream ubuntu image from graph.
