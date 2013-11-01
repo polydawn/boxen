@@ -21,4 +21,4 @@
 
 [build]
 	# Use the dev-tools image to build nginx
-	image = "docket.polydawn.net/dev-tools"
+	upstream = "docket.polydawn.net/dev-tools"

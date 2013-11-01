@@ -4,4 +4,4 @@
 	image = "docket.polydawn.net/dev-tools"
 
 [build]
-	image = "docket.polydawn.net/ubuntu/12.04"
+	upstream = "docket.polydawn.net/ubuntu/12.04"
