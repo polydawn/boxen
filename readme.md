@@ -47,7 +47,7 @@ If you want, you can opt to use your own docker daemon instead.
 To use the default daemon, run this from the `boxen` folder:
 
 ```
-rm -rf dock && ln -s /var/run/ ./dock
+(cd dock && ln -s /var/run/docker.pid && ln -s /var/run/docker.sock)
 ```
 
 All boxen images will now connect to the system-default docker daemon.
