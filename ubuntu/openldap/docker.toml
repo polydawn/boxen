@@ -1,11 +1,14 @@
 # OpenLDAP directory server.
 
-[default]
-	image = "docket.polydawn.net/openldap"
+[image]
+	# Image name
+	name = "docket.polydawn.net/openldap"
 
-	# Script to load
-	command = [ "/cwd/run.sh" ]
+	# This image is built from the ubuntu image
+	upstream = "docket.polydawn.net/ubuntu/12.04"
 
+
+[settings]
 	# Additional folder mounts
 	mounts = [
 		[ "./config/system", "/usr/share/slapd", "rw" ],
@@ -18,5 +21,14 @@
 		[ "389", "389" ]
 	]
 
-[build]
-	upstream = "docket.polydawn.net/ubuntu/12.04"
+
+[targets]
+	# Launcher script for openldap.
+	[default]
+		command = [ "/docket/run.sh" ]
+
+	[bash]
+		command = [ "/bin/bash" ]
+
+	[build]
+		command = [ "/docket/build.sh" ]

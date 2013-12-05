@@ -1,11 +1,14 @@
 # Example nginx
 
-[default]
-	image = "docket.polydawn.net/nginx"
+[image]
+	# Image name
+	name = "docket.polydawn.net/nginx"
 
-	# Run nginx in the foreground
-	command = [ "/service/bin/nginx",  "-g", "daemon off;", "-c", "/service/conf/nginx.conf" ]
+	# This image is built from the dev-tools image, which is in turn built from ubuntu.
+	upstream = "docket.polydawn.net/dev-tools"
 
+
+[settings]
 	# Port forwarding (host, guest)
 	ports = [
 		[  "80",  "80" ],
@@ -19,6 +22,14 @@
 		[ "./log",  "/service/log",  "rw" ],
 	]
 
-[build]
-	# Use the dev-tools image to build nginx
-	upstream = "docket.polydawn.net/dev-tools"
+
+[targets]
+	# Run nginx in the foreground
+	[default]
+		command = [ "/service/bin/nginx",  "-g", "daemon off;", "-c", "/service/conf/nginx.conf" ]
+
+	[bash]
+		command = [ "/bin/bash" ]
+
+	[build]
+		command = [ "/docket/build.sh" ]

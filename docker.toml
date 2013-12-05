@@ -1,21 +1,26 @@
-# Top-level sections are targets. Call them whatever you want!
-# If present, the 'default' section is always used.
-[default]
-	# What to run when the docker launches
-	command = [ "/bin/echo", "Hello from docket!" ]
+#
+# This is a docket configuration file.
+#
+# To load configuration, Docket will look in the current directory for a 'docker.toml' file.
+# Then it'll keep loading any files in a parent directory, until it finds a folder without one.
+#
 
+
+# Settings control how your containers launch.
+# Images in sub-folders will inherit these settings, making it easy to extend configuration.
+[settings]
 	# Custom DNS servers
 	dns = [ "8.8.8.8", "8.8.4.4" ]
 
 	# Folder mounts
 	#	(host folder, container folder, 'ro' or 'rw' permissions)
 	mounts = [
-		[ ".../",           "/boxen", "ro"],  # The top folder
-		[ "./",             "/cwd",   "ro"],  # The current folder
+		[ ".../", "/boxen",    "ro"],  # The top folder
+		[ "./",   "/docket",   "ro"],  # The current folder
 	]
 
 	# What container folder to start in
-	folder = "/"
+	folder = "/docket"
 
 	# Interactive mode
 	attach = true
@@ -23,16 +28,8 @@
 	# Delete the container after running
 	purge = true
 
-# An example of a different build target
-# Using this, 'docket run bash' in any boxen folder to get an interactive shell.
-[bash]
-	# You can add or override any properties in targets.
-	# Here, we run bash instead of just echo.
-	command = [ "/bin/bash" ]
 
-# Build target.
-# By convention, a build target specifies an upstream image (absent here).
-[build]
-	# Our build command.
-	# Most boxen scripts use the same command, so they do not need to specify this again.
-	command = [ "/cwd/build.sh" ]
+# All our containers are in sub-folders, so some general settings are all we need.
+# Running docket in this folder would fail, since there's no image configured.
+
+# To see how image configuration works, check out the ubuntu folder!

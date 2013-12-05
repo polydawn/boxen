@@ -1,28 +1,60 @@
-# Largely unmodified ubuntu box.
+# A largely unmodified Ubuntu box.
+# We source from docker.io's index, run a system upgrade and that's it!
 
-[default]
+# This is where you name your image, its parent, and its index name (if it has one).
+# Because this container is originally from the index, it has all three.
+[image]
 	# The image name
-	image = "docket.polydawn.net/ubuntu/12.04"
-
-[build]
-	# Upstream ubuntu image from graph.
-	#
-	# This name is used when using the graph as a source, eg:
-	# docket run -s graph
-	#
-	upstream = "index.docker.io/ubuntu/12.04"
+	name = "docket.polydawn.net/ubuntu/12.04"
 
 	# Upstream ubuntu image pulled from public docker index.
 	#
 	# As of Docker 0.6.3, the index pull behavior is absolutely insane.
-	# I'd love to specify where this image comes from, but I *can't*.
+	# I'd love to specify where this image actually comes from, but I *can't*.
 	# Docker explicitly disallows specifying their own URL, see:
-	# https://github.com/dotcloud/docker/blob/d30806590c8436941e5c4f2349af61de0128c49e/registry/registry.go#L100
+	# https://github.com/dotcloud/docker/blob/d30806/registry/registry.go#L100
 	#
-	# Which is why there's an entirely different setting for index. This is passed directly to 'docker pull'.
-	# It's assumed that you'll set whatever docker wants to make it happy, then use your own namespace in the graph.
+	# Which is why there's an entirely different setting for index.
+	# The value of this configuration key is passed directly to 'docker pull'.
+	# It's assumed that you'll set whatever docker wants to make it happy...
+	# Then use your own actually-correct namespace in the graph.
 	#
 	# As of Docket 0.3.0, Docket prevents accidentally pulling unless you specify index as a source, eg:
 	# docket run -s index
 	#
 	index = "ubuntu:12.04"
+
+	# Upstream ubuntu image from graph.
+	#
+	# This name is used when using the graph as a source, eg:
+	# docket run -s graph
+	#
+	# To keep image names consistent (and SANE), all images specify a source URL.
+	# Unfortunately, as per the comments below, docker disallows its own index URL.
+	# Dealing with this drives us all up the wall.
+	#
+	# Luckily, URLs are case-insensitive, and their reject-themselves code is not.
+	# Whelp. And that's why the .io TLD is upper case. We're sorry :(
+	upstream = "index.docker.IO/ubuntu/12.04"
+
+
+# Don't need to specify any extra settings here.
+# There were already a bunch set up in the parent folder's docker.toml, and this file inherits them!
+[settings]
+
+
+# This is where you specify run targets.
+# Targets let you take different actions with the same container.
+[targets]
+	# This is the target that 'docket run' will try if you don't specify one.
+	[default]
+		command = [ "/bin/echo", "Hello from docket!" ]
+
+	# This is the target that 'docket build' will try if you don't specify one.
+	[build]
+		command = [ "/docket/build.sh" ]
+
+	# You can call targets anything, and they can have any command or extra settings.
+	# This target launches a bash shell - try 'docket run bash' in this folder to try it out!
+	[bash]
+		command = [ "/bin/bash" ]
