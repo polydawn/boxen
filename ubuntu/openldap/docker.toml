@@ -22,13 +22,12 @@
 	]
 
 
-[targets]
-	# Launcher script for openldap.
-	[default]
-		command = [ "/docket/run.sh" ]
+# Launcher script for openldap.
+[target.default]
+	command = [ "/docket/run.sh" ]
 
-	[bash]
-		command = [ "/bin/bash" ]
+[target.bash]
+	command = [ "/bin/bash" ]
 
-	[build]
-		command = [ "/docket/build.sh" ]
+[target.build]
+	command = [ "/docket/build.sh" ]

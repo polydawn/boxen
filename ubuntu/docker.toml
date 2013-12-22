@@ -43,18 +43,18 @@
 [settings]
 
 
-# This is where you specify run targets.
+# You can specify run targets of any name.
 # Targets let you take different actions with the same container.
-[targets]
-	# This is the target that 'docket run' will try if you don't specify one.
-	[default]
-		command = [ "/bin/echo", "Hello from docket!" ]
 
-	# This is the target that 'docket build' will try if you don't specify one.
-	[build]
-		command = [ "/docket/build.sh" ]
+# This is the target that 'docket run' will try if you don't specify one.
+[target.default]
+	command = [ "/bin/echo", "Hello from docket!" ]
 
-	# You can call targets anything, and they can have any command or extra settings.
-	# This target launches a bash shell - try 'docket run bash' in this folder to try it out!
-	[bash]
-		command = [ "/bin/bash" ]
+# This is the target that 'docket build' will try if you don't specify one.
+[target.build]
+	command = [ "/docket/build.sh" ]
+
+# You can call targets anything, and they can have any command or extra settings.
+# This target launches a bash shell - try 'docket run bash' in this folder to try it out!
+[target.bash]
+	command = [ "/bin/bash" ]

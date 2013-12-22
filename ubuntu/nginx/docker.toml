@@ -23,13 +23,12 @@
 	]
 
 
-[targets]
-	# Run nginx in the foreground
-	[default]
-		command = [ "/service/bin/nginx",  "-g", "daemon off;", "-c", "/service/conf/nginx.conf" ]
+# Run nginx in the foreground
+[target.default]
+	command = [ "/service/bin/nginx",  "-g", "daemon off;", "-c", "/service/conf/nginx.conf" ]
 
-	[bash]
-		command = [ "/bin/bash" ]
+[target.bash]
+	command = [ "/bin/bash" ]
 
-	[build]
-		command = [ "/docket/build.sh" ]
+[target.build]
+	command = [ "/docket/build.sh" ]

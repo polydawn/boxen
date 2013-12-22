@@ -11,14 +11,13 @@
 [settings]
 
 
-[targets]
-	# The dev-tools image is for commonly-required build packages, so the default target just launches a shell.
-	# This is copied into the bash target for consistency.
-	[default]
-		command = [ "/bin/bash" ]
+# The dev-tools image is for commonly-required build packages, so the default target just launches a shell.
+# This is copied into the bash target for consistency.
+[target.default]
+	command = [ "/bin/bash" ]
 
-	[bash]
-		command = [ "/bin/bash" ]
+[target.bash]
+	command = [ "/bin/bash" ]
 
-	[build]
-		command = [ "/docket/build.sh" ]
+[target.build]
+	command = [ "/docket/build.sh" ]
