@@ -5,7 +5,6 @@
 # Then it'll keep loading any files in a parent directory, until it finds a folder without one.
 #
 
-
 # Settings control how your containers launch.
 # Images in sub-folders will inherit these settings, making it easy to extend configuration.
 [settings]

@@ -7,7 +7,24 @@
 	# The image name
 	name = "docket.polydawn.net/ubuntu/12.04"
 
-	# Upstream ubuntu image pulled from public docker index.
+	# Upstream ubuntu image, from the graph.
+	#
+	# This name is used when using the graph as a source, eg:
+	# docket run -s graph
+	#
+	# To keep image names consistent (and SANE), all images specify a source URL.
+	# Unfortunately, as per the comments below, docker disallows its own index URL.
+	# Dealing with this drives us all up the wall.
+	#
+	# Luckily, URLs are case-insensitive, and their reject-themselves code is not.
+	# Whelp. And that's why the .io TLD is upper case. We're sorry :(
+	upstream = "index.docker.IO/ubuntu/12.04"
+
+	# Upstream ubuntu image, pulled from public docker index.
+	#
+	#
+	# This name is used when using the index as a source, eg:
+	# docket run -s index
 	#
 	# As of Docker 0.6.3, the index pull behavior is absolutely insane.
 	# I'd love to specify where this image actually comes from, but I *can't*.
@@ -23,19 +40,6 @@
 	# docket run -s index
 	#
 	index = "ubuntu:12.04"
-
-	# Upstream ubuntu image from graph.
-	#
-	# This name is used when using the graph as a source, eg:
-	# docket run -s graph
-	#
-	# To keep image names consistent (and SANE), all images specify a source URL.
-	# Unfortunately, as per the comments below, docker disallows its own index URL.
-	# Dealing with this drives us all up the wall.
-	#
-	# Luckily, URLs are case-insensitive, and their reject-themselves code is not.
-	# Whelp. And that's why the .io TLD is upper case. We're sorry :(
-	upstream = "index.docker.IO/ubuntu/12.04"
 
 
 # Don't need to specify any extra settings here.
