@@ -1,4 +1,8 @@
-image.tar
-dock
+# Docket will create a git repository called graph to store images
+/graph
+
+# If Docket runs its own Docker server, it will be stored here
+/dock
+
+# For various services with log folder mounts
 log
-graph
