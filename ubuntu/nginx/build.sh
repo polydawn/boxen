@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
 # Get the source, checkout tagged release
-git clone https://git.kofalt.com/git/public/nginx.git /service/src && cd /service/src
-git checkout --quiet release-1.5.4
+git clone https://github.com/polydawn-ports/nginx.git /service/src && cd /service/src
+git checkout --quiet release-1.5.8
 
 # Configure
 # Nginx's build process creates some default configuration.
