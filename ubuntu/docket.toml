@@ -43,7 +43,7 @@
 
 
 # Don't need to specify any extra settings here.
-# There were already a bunch set up in the parent folder's docker.toml, and this file inherits them!
+# There were already a bunch set up in the parent folder's docket.toml, and this file inherits them!
 [settings]
 
 

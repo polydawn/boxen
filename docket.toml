@@ -1,7 +1,7 @@
 #
 # This is a docket configuration file.
 #
-# To load configuration, Docket will look in the current directory for a 'docker.toml' file.
+# To load configuration, Docket will look in the current directory for a 'docket.toml' file.
 # Then it'll keep loading any files in a parent directory, until it finds a folder without one.
 #
 
