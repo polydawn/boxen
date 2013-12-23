@@ -1,5 +1,6 @@
-# A largely unmodified Ubuntu box.
-# We source from docker.io's index, run a system upgrade and that's it!
+# Our version of the Ubuntu image.
+# Runs a full system upgrade to get the latest packages.
+
 
 # This is where you name your image, its parent, and its index name (if it has one).
 # Because this container is originally from the index, it has all three.
@@ -7,39 +8,8 @@
 	# The image name
 	name = "example.com/ubuntu/12.04"
 
-	# Upstream ubuntu image, from the graph.
-	#
-	# This name is used when using the graph as a source, eg:
-	# docket run -s graph
-	#
-	# To keep image names consistent (and SANE), all images specify a source URL.
-	# Unfortunately, as per the comments below, docker disallows its own index URL.
-	# Dealing with this drives us all up the wall.
-	#
-	# Luckily, URLs are case-insensitive, and their reject-themselves code is not.
-	# Whelp. And that's why the .io TLD is upper case. We're sorry :(
+	# Upstream ubuntu image (originally from the index)
 	upstream = "index.docker.IO/ubuntu/12.04"
-
-	# Upstream ubuntu image, pulled from public docker index.
-	#
-	#
-	# This name is used when using the index as a source, eg:
-	# docket run -s index
-	#
-	# As of Docker 0.6.3, the index pull behavior is absolutely insane.
-	# I'd love to specify where this image actually comes from, but I *can't*.
-	# Docker explicitly disallows specifying their own URL, see:
-	# https://github.com/dotcloud/docker/blob/d30806/registry/registry.go#L100
-	#
-	# Which is why there's an entirely different setting for index.
-	# The value of this configuration key is passed directly to 'docker pull'.
-	# It's assumed that you'll set whatever docker wants to make it happy...
-	# Then use your own actually-correct namespace in the graph.
-	#
-	# As of Docket 0.3.0, Docket prevents accidentally pulling unless you specify index as a source, eg:
-	# docket run -s index
-	#
-	index = "ubuntu:12.04"
 
 
 # Don't need to specify any extra settings here.
