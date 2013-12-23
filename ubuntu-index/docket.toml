@@ -4,29 +4,17 @@
 # This is where you name your image and its parent.
 [image]
 	# The image name.
-	#
-	# To keep image names consistent (and SANE), all images specify a source URL.
-	# Unfortunately, as per the comments below, docker disallows its own index URL.
-	# Dealing with this drives us all up the wall.
-	#
-	# Luckily, URLs are case-insensitive, and their reject-themselves code is not.
-	# Whelp. And that's why the .io TLD is upper case. We're sorry :(
-	name = "index.docker.IO/ubuntu/12.04"
+	name = "index.docker.io/ubuntu/12.04"
 
 	# Upstream ubuntu image, pulled from public docker index.
 	#
-	# As of Docker 0.6.3, the index pull behavior is absolutely insane.
-	# I'd love to specify where this image actually comes from, but I *can't*.
+	# The value of this configuration key is passed directly to 'docker pull'.
+	# This lets you map index names to your own image names.
+	#
+	# Note: Namespacing in the public index works differently than full URL branch names.
+	# As of Docker 0.6.3, the index pull behavior is incompatible with URLs.
 	# Docker explicitly disallows specifying their own URL, see:
 	# https://github.com/dotcloud/docker/blob/d30806/registry/registry.go#L100
-	#
-	# Which is why there's an entirely different setting for index.
-	# The value of this configuration key is passed directly to 'docker pull'.
-	# It's assumed that you'll set whatever docker wants to make it happy...
-	# Then use your own actually-correct namespace in the graph.
-	#
-	# As of Docket 0.3.0, Docket prevents accidentally pulling unless you specify index as a source, eg:
-	# docket run -s index
 	#
 	index = "ubuntu:12.04"
 

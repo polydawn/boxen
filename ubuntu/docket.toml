@@ -9,7 +9,7 @@
 	name = "example.com/ubuntu/12.04"
 
 	# Upstream ubuntu image (originally from the index)
-	upstream = "index.docker.IO/ubuntu/12.04"
+	upstream = "index.docker.io/ubuntu/12.04"
 
 
 # Don't need to specify any extra settings here.
