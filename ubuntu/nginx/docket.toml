@@ -9,12 +9,6 @@
 
 
 [settings]
-	# Port forwarding (host, guest)
-	ports = [
-		[  "80",  "80" ],
-		[ "443", "443" ],
-	]
-
 	# Additional folder mounts
 	mounts = [
 		[ "./conf", "/service/conf", "ro" ],
@@ -26,6 +20,12 @@
 # Run nginx in the foreground
 [target.run]
 	command = [ "/service/bin/nginx",  "-g", "daemon off;", "-c", "/service/conf/nginx.conf" ]
+
+	# Port forwarding (host, guest)
+	ports = [
+		[  "80",  "80" ],
+		[ "443", "443" ],
+	]
 
 [target.bash]
 	command = [ "/bin/bash" ]
