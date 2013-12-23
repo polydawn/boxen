@@ -9,16 +9,15 @@ The [Docket tutorial](https://github.com/polydawn/docket#how-do-i-use-it) will s
 
 Feeling adventurous? With Docker & Docket on your path, try:
 
-
 ```bash
 # Clone down some example config files
-git clone https://github.com/polydawn/boxen.git && cd boxen/ubuntu
+git clone https://github.com/polydawn/boxen.git && cd boxen
 
 # Download ubuntu from public index, save into git
-docket build -s index -d graph --noop
+cd ubuntu-index && docket build
 
-# Upgrade apt-get packages
-docket build
+# Build your own ubuntu image (updates apt-get)
+cd ../ubuntu    && docket build
 
 # Load repeatable ubuntu from git and start an interactive shell
 docket run bash
@@ -33,7 +32,7 @@ When you're done with that, let's run nginx:
 cd dev-tools && docket build
 
 # Build nginx
-cd ../nginx && docket build
+cd ../nginx  && docket build
 
 #Launch nginx
 docket run
