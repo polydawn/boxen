@@ -17,7 +17,7 @@
 
 # The web-dev image is for easily messing with common web tools, so the default target just launches a shell.
 # This is copied into the bash target for consistency.
-[target.default]
+[target.run]
 	command = [ "/bin/bash" ]
 
 [target.bash]

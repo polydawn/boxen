@@ -24,7 +24,7 @@
 
 
 # Run nginx in the foreground
-[target.default]
+[target.run]
 	command = [ "/service/bin/nginx",  "-g", "daemon off;", "-c", "/service/conf/nginx.conf" ]
 
 [target.bash]

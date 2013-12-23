@@ -23,7 +23,7 @@
 
 
 # Launcher script for openldap.
-[target.default]
+[target.run]
 	command = [ "/docket/run.sh" ]
 
 [target.bash]

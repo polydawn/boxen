@@ -51,7 +51,7 @@
 # Targets let you take different actions with the same container.
 
 # This is the target that 'docket run' will try if you don't specify one.
-[target.default]
+[target.run]
 	command = [ "/bin/echo", "Hello from docket!" ]
 
 # This is the target that 'docket build' will try if you don't specify one.
