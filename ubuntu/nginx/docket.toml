@@ -2,10 +2,10 @@
 
 [image]
 	# Image name
-	name = "docket.polydawn.net/nginx"
+	name = "example.com/nginx"
 
 	# This image is built from the dev-tools image, which is in turn built from ubuntu.
-	upstream = "docket.polydawn.net/dev-tools"
+	upstream = "example.com/dev-tools"
 
 
 [settings]

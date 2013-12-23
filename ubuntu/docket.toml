@@ -5,7 +5,7 @@
 # Because this container is originally from the index, it has all three.
 [image]
 	# The image name
-	name = "docket.polydawn.net/ubuntu/12.04"
+	name = "example.com/ubuntu/12.04"
 
 	# Upstream ubuntu image, from the graph.
 	#

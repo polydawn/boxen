@@ -2,10 +2,10 @@
 
 [image]
 	# Image name
-	name = "docket.polydawn.net/openldap"
+	name = "example.com/openldap"
 
 	# This image is built from the ubuntu image
-	upstream = "docket.polydawn.net/ubuntu/12.04"
+	upstream = "example.com/ubuntu/12.04"
 
 
 [settings]
