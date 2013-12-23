@@ -20,11 +20,7 @@ apt-get install -y ruby1.9.1
 
 # Clone node
 git clone https://github.com/joyent/node.git && cd node
-git checkout -q v0.10.20
-
-# Lie about python's location.
-# Despite node's docs they don't follow their own $PYTHON env variable during the makefile.
-ln -s /usr/bin/python2.7 /usr/bin/python
+git checkout -q v0.10.24
 
 # Build node
 $PYTHON ./configure
