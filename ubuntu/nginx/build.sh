@@ -22,3 +22,6 @@ git checkout --quiet release-1.5.8
 # Compile and install
 make
 make install
+
+# Clear source folder; right now guitar doesn't like nested git repos
+rm -rf /service/src
