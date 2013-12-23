@@ -25,3 +25,6 @@ make install
 
 # Clear source folder; right now guitar doesn't like nested git repos
 rm -rf /service/src
+
+# Clear default config outputs;
+rm -rf /service/default
