@@ -1,7 +1,7 @@
 #
-# This is a docket configuration file.
+# This is a hroot configuration file.
 #
-# To load configuration, Docket will look in the current directory for a 'docket.toml' file.
+# To load configuration, Hroot will look in the current directory for a 'hroot.toml' file.
 # Then it'll keep loading any files in a parent directory, until it finds a folder without one.
 #
 
@@ -15,11 +15,11 @@
 	#	(host folder, container folder, 'ro' or 'rw' permissions)
 	mounts = [
 		[ ".../", "/boxen",    "ro"],  # The top folder
-		[ "./",   "/docket",   "ro"],  # The current folder
+		[ "./",   "/hroot",   "ro"],  # The current folder
 	]
 
 	# What container folder to start in
-	folder = "/docket"
+	folder = "/hroot"
 
 	# Interactive mode
 	attach = true
@@ -29,6 +29,6 @@
 
 
 # All our containers are in sub-folders, so some general settings are all we need.
-# Running docket in this folder would fail, since there's no image configured.
+# Running hroot in this folder would fail, since there's no image configured.
 
 # To see how image configuration works, check out the ubuntu folder!

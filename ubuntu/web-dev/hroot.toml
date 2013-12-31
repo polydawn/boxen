@@ -24,4 +24,4 @@
 	command = [ "/bin/bash" ]
 
 [target.build]
-	command = [ "/docket/build.sh" ]
+	command = [ "/hroot/build.sh" ]

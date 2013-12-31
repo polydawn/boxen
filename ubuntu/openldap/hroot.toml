@@ -24,10 +24,10 @@
 
 # Launcher script for openldap.
 [target.run]
-	command = [ "/docket/run.sh" ]
+	command = [ "/hroot/run.sh" ]
 
 [target.bash]
 	command = [ "/bin/bash" ]
 
 [target.build]
-	command = [ "/docket/build.sh" ]
+	command = [ "/hroot/build.sh" ]

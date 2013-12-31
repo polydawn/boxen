@@ -13,22 +13,22 @@
 
 
 # Don't need to specify any extra settings here.
-# There were already a bunch set up in the parent folder's docket.toml, and this file inherits them!
+# There were already a bunch set up in the parent folder's hroot.toml, and this file inherits them!
 [settings]
 
 
 # You can specify run targets of any name.
 # Targets let you take different actions with the same container.
 
-# This is the target that 'docket run' will try if you don't specify one.
+# This is the target that 'hroot run' will try if you don't specify one.
 [target.run]
-	command = [ "/bin/echo", "Hello from docket!" ]
+	command = [ "/bin/echo", "Hello from hroot!" ]
 
-# This is the target that 'docket build' will try if you don't specify one.
+# This is the target that 'hroot build' will try if you don't specify one.
 [target.build]
-	command = [ "/docket/build.sh" ]
+	command = [ "bash", "-c", "time /hroot/build.sh" ]
 
 # You can call targets anything, and they can have any command or extra settings.
-# This target launches a bash shell - try 'docket run bash' in this folder to try it out!
+# This target launches a bash shell - try 'hroot run bash' in this folder to try it out!
 [target.bash]
 	command = [ "/bin/bash" ]
