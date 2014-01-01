@@ -26,7 +26,7 @@
 
 # This is the target that 'hroot build' will try if you don't specify one.
 [target.build]
-	command = [ "bash", "-c", "time /hroot/build.sh" ]
+	command = [ "/hroot/build.sh" ]
 
 # You can call targets anything, and they can have any command or extra settings.
 # This target launches a bash shell - try 'hroot run bash' in this folder to try it out!

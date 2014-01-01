@@ -37,4 +37,4 @@
 	command = [ "/bin/bash" ]
 
 [target.build]
-	command = [ "/bin/bash", "-c", "time /hroot/build.sh" ]
+	command = [ "/hroot/build.sh" ]
