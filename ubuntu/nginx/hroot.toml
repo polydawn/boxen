@@ -1,4 +1,4 @@
-# Example nginx
+ # Example nginx
 
 [image]
 	# Image name
@@ -11,13 +11,10 @@
 [settings]
 	# Additional folder mounts
 	mounts = [
-		[ "./conf", "/service/conf", "ro" ],
-		[ "./data", "/service/data", "ro" ],
-		[ "./log",  "/service/log",  "rw" ],
+		[ "./log", "/service/log", "rw" ],
 	]
 
 
-# Run nginx in the foreground
 [target.run]
 	# Port forwarding (host, guest)
 	ports = [
@@ -25,13 +22,8 @@
 		[ "443", "443" ],
 	]
 
-	command = [ "/service/bin/nginx",  "-g", "daemon off;", "-c", "/service/conf/nginx.conf" ]
-
-	# Port forwarding (host, guest)
-	ports = [
-		[  "80",  "80" ],
-		[ "443", "443" ],
-	]
+	# Run nginx in the foreground
+	command = [ "/service/nginx",  "-g", "daemon off;", "-c", "/hroot/conf/nginx.conf" ]
 
 [target.bash]
 	command = [ "/bin/bash" ]

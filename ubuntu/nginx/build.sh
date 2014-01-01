@@ -11,11 +11,11 @@ git checkout --quiet release-1.5.8
 ./auto/configure \
 	--prefix=/service/default \
 	--conf-path=/service/default/nginx.conf \
-	--pid-path=/service/var/nginx.pid \
-	--lock-path=/service/var/nginx.lock \
-	--error-log-path=/service/log/error.log \
-	--http-log-path=/service/log/access.log \
-	--sbin-path=/service/bin/nginx \
+	--pid-path=/service/default/nginx.pid \
+	--lock-path=/service/default/nginx.lock \
+	--error-log-path=/service/default/error.log \
+	--http-log-path=/service/default/access.log \
+	--sbin-path=/service/nginx \
 	--with-pcre-jit \
 	--with-http_ssl_module
 
@@ -26,5 +26,5 @@ make install
 # Clear source folder; right now guitar doesn't like nested git repos
 rm -rf /service/src
 
-# Clear default config outputs;
-rm -rf /service/default
+# Clear default config outputs
+rm -rf /service/default/*
