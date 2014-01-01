@@ -14,8 +14,8 @@
 	# Folder mounts
 	#	(host folder, container folder, 'ro' or 'rw' permissions)
 	mounts = [
-		[ ".../", "/boxen",    "ro"],  # The top folder
-		[ "./",   "/hroot",   "ro"],  # The current folder
+		[ ".../", "/boxen", "ro"],  # The top folder
+		[ "./",   "/hroot", "ro"],  # The current folder
 	]
 
 	# What container folder to start in
