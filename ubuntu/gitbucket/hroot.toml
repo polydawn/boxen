@@ -1,0 +1,34 @@
+ # The easily installable Github clone powered by Scala
+
+[image]
+	# Image name
+	name = "example.com/gitbucket"
+
+	# This image is built from the dev-tools image, which is in turn built from ubuntu.
+	upstream = "example.com/dev-tools"
+
+
+[settings]
+	# Additional folder mounts
+	mounts = [
+		[ "./data", "/service/data", "rw" ],
+	]
+
+	# Port forwarding (host, guest)
+	ports = [
+		[  "9001",  "8080" ]
+	]
+
+[target.run]
+	# Run gitbucket in the foreground
+	command = [ "java", "-jar", "/service/gitbucket.war",
+		"--gitbucket.home=/service/data",
+		"--https=true",
+		"--prefix=/gitbucket",
+	]
+
+[target.bash]
+	command = [ "/bin/bash" ]
+
+[target.build]
+	command = [ "/hroot/build.sh" ]
