@@ -6,10 +6,10 @@
 # Because this container is originally from the index, it has all three.
 [image]
 	# The image name
-	name = "example.com/ubuntu/12.04"
+	name = "example.com/ubuntu/14.04"
 
 	# Upstream ubuntu image (originally from the index)
-	upstream = "index.docker.io/ubuntu/12.04"
+	upstream = "index.docker.io/ubuntu/14.04"
 
 
 # Don't need to specify any extra settings here.

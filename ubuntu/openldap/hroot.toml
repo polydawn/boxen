@@ -5,7 +5,7 @@
 	name = "example.com/openldap"
 
 	# This image is built from the ubuntu image
-	upstream = "example.com/ubuntu/12.04"
+	upstream = "example.com/ubuntu/14.04"
 
 
 [settings]
