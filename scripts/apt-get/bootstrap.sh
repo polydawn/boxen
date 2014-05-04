@@ -26,11 +26,6 @@ codename=`/usr/bin/lsb_release -cs`
 #	Tell apt to use a nearby mirror. Can *dramatically* increase update speed.
 #	Default Ubuntu sources generated via http://repogen.simplylinux.ch
 cat > /etc/apt/sources.list <<EOF
-###### Mirrors for apt-get
-deb mirror://mirrors.ubuntu.com/mirrors.txt quantal main restricted universe multiverse
-deb mirror://mirrors.ubuntu.com/mirrors.txt quantal-updates main restricted universe multiverse
-deb mirror://mirrors.ubuntu.com/mirrors.txt quantal-security main restricted universe multiverse
-
 ###### Ubuntu Main Repos
 deb http://us.archive.ubuntu.com/ubuntu/ $codename main restricted universe
 
