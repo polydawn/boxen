@@ -36,4 +36,4 @@ EOF
 chmod 0644 /etc/apt/sources.list
 
 # Pin initscripts, because docker conflicts with files that package thinks it owns.
-apt-mark hold initscripts
+apt-mark hold initscripts makedev
