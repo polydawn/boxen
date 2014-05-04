@@ -20,7 +20,7 @@ apt-get install -y ruby1.9.1
 
 # Clone node
 git clone https://github.com/joyent/node.git && cd node
-git checkout -q v0.10.24
+git checkout -q v0.10.28
 
 # Build node
 $PYTHON ./configure
