@@ -27,11 +27,11 @@ codename=`/usr/bin/lsb_release -cs`
 #	Default Ubuntu sources generated via http://repogen.simplylinux.ch
 cat > /etc/apt/sources.list <<EOF
 ###### Ubuntu Main Repos
-deb http://us.archive.ubuntu.com/ubuntu/ $codename main restricted universe
+deb http://mirrors.linode.com/ubuntu/ $codename main restricted universe
 
 ###### Ubuntu Update Repos
-deb http://us.archive.ubuntu.com/ubuntu/ $codename-security main restricted universe
-deb http://us.archive.ubuntu.com/ubuntu/ $codename-updates  main restricted universe
+deb http://mirrors.linode.com/ubuntu/ $codename-security main restricted universe
+deb http://mirrors.linode.com/ubuntu/ $codename-updates  main restricted universe
 EOF
 chmod 0644 /etc/apt/sources.list
 
