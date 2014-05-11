@@ -4,7 +4,7 @@
 # This is where you name your image and its parent.
 [image]
 	# The image name.
-	name = "index.docker.io/ubuntu/12.04"
+	name = "index.docker.io/ubuntu/14.04"
 
 	# Upstream ubuntu image, pulled from public docker index.
 	#
@@ -16,7 +16,7 @@
 	# Docker explicitly disallows specifying their own URL, see:
 	# https://github.com/dotcloud/docker/blob/d30806/registry/registry.go#L100
 	#
-	index = "ubuntu:12.04"
+	index = "ubuntu:14.04"
 
 
 # Don't need to specify any extra settings here.

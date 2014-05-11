@@ -2,7 +2,7 @@
 
 # Download tagged release
 mkdir -p /service
-wget https://github.com/takezoe/gitbucket/releases/download/1.9/gitbucket.war -O /service/gitbucket.war
+wget https://github.com/takezoe/gitbucket/releases/download/1.13/gitbucket.war -O /service/gitbucket.war
 
 # Install java
 . /boxen/scripts/apt-get/update.sh
